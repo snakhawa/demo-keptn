@@ -5,18 +5,28 @@ comparison:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
-  - sli: throughput_svc
+  - sli: us_dp_hotelcar_loadConfirmation_90pct
     pass:
       - criteria:
-        - ">20000"
-  - sli: error_rate_svc
+        - "<10"
+    warning:
+      - criteria:
+        - ">10"
+  - sli: us_dp_hotelcar_loadConfirmation_count
+    pass:
+      - criteria:
+        - ">25"
+    warning:
+      - criteria:
+          - "<10"
+  - sli: us_dp_hotelcar_loadConfirmation_error_count
     weight: 2
     pass:
       - criteria:
-          - "<=1%"
+          - "<=0"
     warning:
       - criteria:
-          - "<=2%"
+          - ">0"
 total_score:
   pass: "90%"
   warning: "75%"
