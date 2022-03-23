@@ -17,14 +17,6 @@ objectives:
     warning:
       - criteria:
           - "<=2%"
-  - sli: rt_svc_p50
-  - sli: rt_svc_p90
-    pass:
-      - criteria:
-          - "<=+10%"
-    warning:
-      - criteria:
-          - "<=+10%"
 total_score:
   pass: "90%"
   warning: "75%"
