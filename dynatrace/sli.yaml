@@ -1,0 +1,5 @@
+---
+spec_version: '1.0'
+indicators:
+  throughput_svc: "metricSelector=builtin:service.requestCount.total:filter(and(in(\"dt.entity.service\",entitySelector(\"type(service),tag(~\"keptn_service:costcowebapp~\")\")))):splitBy():sum:auto:sort(value(sum,descending))"
+  error_rate_svc: "metricSelector=builtin:service.errors.total.count:filter(and(in(\"dt.entity.service\",entitySelector(\"type(service),tag(~\"keptn_service:costcowebapp~\")\")))):splitBy():avg:auto:sort(value(avg,descending))"
