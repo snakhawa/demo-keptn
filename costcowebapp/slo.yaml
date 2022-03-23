@@ -8,10 +8,10 @@ objectives:
   - sli: us_dp_hotelcar_loadConfirmation_90pct
     pass:
       - criteria:
-        - "<10"
+        - "<1000"
     warning:
       - criteria:
-        - ">10"
+        - ">1000"
   - sli: us_dp_hotelcar_loadConfirmation_count
     pass:
       - criteria:
