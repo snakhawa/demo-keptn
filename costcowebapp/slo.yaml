@@ -5,6 +5,50 @@ comparison:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
+  - sli: us_dp_hotelcar_Search_90pct
+    pass:
+      - criteria:
+        - "<10000"
+    warning:
+      - criteria:
+        - ">11000"
+  - sli: us_dp_hotelcar_Search_count
+    pass:
+      - criteria:
+        - ">25"
+    warning:
+      - criteria:
+          - "<10"
+  - sli: us_dp_hotelcar_Search_error_count
+    weight: 2
+    pass:
+      - criteria:
+          - "<=0"
+    warning:
+      - criteria:
+          - ">0"
+  - sli: us_dp_hotelcar_PreBookRecap_90pct
+    pass:
+      - criteria:
+        - "<4000"
+    warning:
+      - criteria:
+        - ">5000"
+  - sli: us_dp_hotelcar_PreBookRecap_count
+    pass:
+      - criteria:
+        - ">25"
+    warning:
+      - criteria:
+          - "<10"
+  - sli: us_dp_hotelcar_PreBookRecap_error_count
+    weight: 2
+    pass:
+      - criteria:
+          - "<=0"
+    warning:
+      - criteria:
+          - ">0"
   - sli: us_dp_hotelcar_loadConfirmation_90pct
     pass:
       - criteria:
