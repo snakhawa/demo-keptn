@@ -5,10 +5,11 @@ comparison:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
-  - sli: us_dp_hotelcar_Search_90pct
+  - sli: us_dp_hotelcar_Search_90pct # pass if (relative change <= 10% AND absolute value is < 10000)
     pass:
       - criteria:
-        - "<10000"
+         - "<=+10%"   # relative values require a prefixed sign (plus or minus)
+         - "<10000"   # absolute values only require a logical operator
     warning:
       - criteria:
         - ">11000"
@@ -23,10 +24,10 @@ objectives:
     weight: 2
     pass:
       - criteria:
-          - "<=0"
+          - "<=1%"
     warning:
       - criteria:
-          - ">0"
+          - "<=5%"
   - sli: us_dp_hotelcar_PreBookRecap_90pct
     pass:
       - criteria:
@@ -45,10 +46,10 @@ objectives:
     weight: 2
     pass:
       - criteria:
-          - "<=0"
+          - "<=1%"
     warning:
       - criteria:
-          - ">0"
+          - "<=5%"
   - sli: us_dp_hotelcar_loadConfirmation_90pct
     pass:
       - criteria:
@@ -67,10 +68,10 @@ objectives:
     weight: 2
     pass:
       - criteria:
-          - "<=0"
+          - "<=1%"
     warning:
       - criteria:
-          - ">0"
+          - "<=5%"
 total_score:
   pass: "90%"
   warning: "75%"
